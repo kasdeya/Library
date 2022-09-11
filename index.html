@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<title>Library</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="form">
+      <h2>Book Form</h2>
+      <form>
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" placeholder="Harry Potter and the Philosopher's Stone">
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author" placeholder="J. K. Rowling">
+        <label for="pages">Pages</label>
+        <input type="number" name="pages" id="pages" placeholder="223" value="223">
+        <br>
+        <label for="readStatus">Status:</label>
+        <br>
+        <input type="radio" name="readStatus" id="read" value="read" checked>
+        <label for="read">Read</label>
+        <br>
+        <input type="radio" name="readStatus" id="reading" value="reading" >
+        <label for="reading">Reading</label>
+        <br>
+        <input type="radio" name="readStatus" id="notRead" value="notRead" >
+        <label for="notRead">Not read yet!</label>
+        <br>
+
+          <!-- <button type="submit" id="submit">Submit</button> -->
+
+        <input type="submit" id="submit" value="Submit">
+      </form>
+    </div>
+  
+
+    <script src="script.js"></script>
+  </body>
+</html>
