@@ -1,0 +1,17 @@
+body {
+  background: grey;
+  background-color: grey;
+}
+#container {
+  display: flex;
+}
+
+.library-item {
+  background-color: red;
+  background: red;
+  margin-left: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+
