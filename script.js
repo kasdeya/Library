@@ -57,13 +57,32 @@ function drawLibrary() {
     let cellPages_i = document.createElement("h3");
     let cellStatus_i = document.createElement("h3");
     let removeButton_i = document.createElement("button");
+    let dropdownBtn_i = document.createElement("button");
+    let dropdownContent_i = document.createElement("div");
+    let readBtn_i = document.createElement("button");
+    let readingBtn_i = document.createElement("button");
+    let notReadBtn_i = document.createElement("button");
+    dropdownContent_i.id = "dropdown-content"
+    readBtn_i.innerText = 'Read'
+    readingBtn_i.innerText = 'Reading'
+    notReadBtn_i.innerText = 'Not read yet'
     removeButton_i.innerText = 'Remove'
+    dropdownBtn_i.innerText = 'Status'
+    dropdownBtn_i.addEventListener('click', () => {
+      dropdownContent_i.classList.toggle("show");
+      console.log(dropdownContent_i)
+    })
     libraryContainer.appendChild(cell_i).className = "library-item";
-    cell_i.appendChild(cellTitle_i).classname = "item-title";
-    cell_i.appendChild(cellAuthor_i).classname = "item-author";
-    cell_i.appendChild(cellPages_i).classname = "item-pages";
-    cell_i.appendChild(cellStatus_i).classname = "item-status";
-    cell_i.appendChild(removeButton_i).classname = "remove-button";
+    cell_i.appendChild(cellTitle_i).className = "item-title";
+    cell_i.appendChild(cellAuthor_i).className = "item-author";
+    cell_i.appendChild(cellPages_i).className = "item-pages";
+    cell_i.appendChild(cellStatus_i).className = "item-status";
+    cell_i.appendChild(removeButton_i).className = "remove-button";
+    cell_i.appendChild(dropdownBtn_i).className = "dropbtn";
+    cell_i.appendChild(dropdownContent_i).className = "dropdown-content";
+    dropdownContent_i.appendChild(readBtn_i);
+    dropdownContent_i.appendChild(readingBtn_i);
+    dropdownContent_i.appendChild(notReadBtn_i);
     cellTitle_i.innerText = `${myLibrary[i].title}`
     cellAuthor_i.innerText = `${myLibrary[i].author}`
     cellPages_i.innerText = `${myLibrary[i].pages}`
@@ -72,6 +91,18 @@ function drawLibrary() {
       myLibrary = myLibrary.filter(data => data.title != cellTitle_i.innerText)
       cell_i.innerText = ''
     });
+    readBtn_i.addEventListener('click', () => {
+      myLibrary[i].readStatus = 'already read'
+      cellStatus_i.innerText = `${myLibrary[i].readStatus}`
+    })
+readingBtn_i.addEventListener('click', () => {
+      myLibrary[i].readStatus = 'reading'
+      cellStatus_i.innerText = `${myLibrary[i].readStatus}`
+    })
+notReadBtn_i.addEventListener('click', () => {
+      myLibrary[i].readStatus = 'not read yet'
+      cellStatus_i.innerText = `${myLibrary[i].readStatus}`
+    })
   }
 }
 
